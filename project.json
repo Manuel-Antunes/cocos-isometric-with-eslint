@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "packages",
+  "name": "template_with_eslint",
+  "id": "883c7d34-49e1-4271-b30b-ca609689128d",
+  "version": "2.4.3",
+  "isNew": false
+}
