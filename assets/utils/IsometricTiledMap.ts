@@ -13,9 +13,9 @@ export default class IsometricTiledMap extends cc.TiledMap {
     this.initMap();
   }
 
-  private obstacles: Array<cc.Rect> = [];
+  public obstacles: Array<cc.Rect> = [];
 
-  private walkableTiles: Array<cc.Rect> = [];
+  public walkableTiles: Array<cc.Rect> = [];
 
   private initMap(): void {
     this.collidableLayers.forEach(c => {
@@ -24,6 +24,10 @@ export default class IsometricTiledMap extends cc.TiledMap {
     this.walkableLayers.forEach(w => {
       this.addLayerRectsToGroup(this.obstacles, w);
     });
+  }
+
+  public getRandNavigablePoint(): cc.Rect {
+    return this.walkableTiles[Math.ceil(Math.random() * this.walkableTiles.length)];
   }
 
   private addLayerRectsToGroup(group: Array<cc.Rect>, layer: cc.TiledLayer) {
